@@ -2,10 +2,12 @@
 
 namespace App\Providers;
 
+use App\Repositories\AuthRepository;
+use App\Repositories\ChatHistoryRepository;
 use App\Repositories\ChatRoomRepository;
-use App\Repositories\Interfaces\ChatRoomRepositoryInterface;
+use App\Services\AuthService;
+use App\Services\ChatHistoryService;
 use App\Services\ChatRoomService;
-use App\Services\Interfaces\ChatRoomServiceInterface;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -15,8 +17,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->bind(ChatRoomRepositoryInterface::class, ChatRoomRepository::class);
-        $this->app->bind(ChatRoomServiceInterface::class, ChatRoomService::class);
+        $this->app->bind(ChatRoomRepository::class, ChatRoomService::class);
+        $this->app->bind(ChatHistoryRepository::class, ChatHistoryService::class);
+        $this->app->bind(AuthRepository::class, AuthService::class);
     }
 
     /**

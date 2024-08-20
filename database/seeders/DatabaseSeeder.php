@@ -16,10 +16,11 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
         $this->call(ChatRoomSeeder::class);
-        User::factory()->create([
-            'name' => 'User',
-            'email' => 'user@gmail.com',
-            'password' => Hash::make('admin@123')
-        ]);
+        $this->call(UserSeeder::class);
+        // User::factory()->create([
+        //     'name' => 'User',
+        //     'email' => 'user@gmail.com',
+        //     'password' => Hash::make('admin@123')
+        // ]);
     }
 }

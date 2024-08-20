@@ -25,14 +25,15 @@ class ChatRoomRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'room_name' => 'required|string|max:255'
+            'roomName' => 'required|string|max:255',
+            'userIds' => 'required|string',
         ];
     }
 
     public function messages(): array
     {
         return [
-            'room_name.required' => 'Room name is required!'
+            'roomName.required' => 'Room name is required!'
         ];
     }
 

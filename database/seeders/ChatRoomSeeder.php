@@ -14,16 +14,9 @@ class ChatRoomSeeder extends Seeder
     public function run(): void
     {
         $chatRooms = [
-            ['room_name' => 'Chat Room 1'],
-            ['room_name' => 'Chat Room 2'],
-            ['room_name' => 'Chat Room 3'],
-            ['room_name' => 'Chat Room 4'],
-            ['room_name' => 'Chat Room 5'],
-            ['room_name' => 'Chat Room 6'],
-            ['room_name' => 'Chat Room 7'],
-            ['room_name' => 'Chat Room 8'],
-            ['room_name' => 'Chat Room 9'],
-            ['room_name' => 'Chat Room 10'],
+            ['room_name' => 'Single Chat Room', 'user_ids' => '1,2'],
+            ['room_name' => 'Group Chat Room', 'user_ids' => '1,2,3'],
+            ['room_name' => 'Other Chat Room', 'user_ids' => '11,22,111,222,1122'],
         ];
         ChatRoom::insert($chatRooms);
     }

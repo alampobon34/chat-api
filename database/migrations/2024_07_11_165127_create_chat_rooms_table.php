@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('chat_rooms', function (Blueprint $table) {
             $table->id();
             $table->string('room_name');
+            $table->text('user_ids');
             $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
