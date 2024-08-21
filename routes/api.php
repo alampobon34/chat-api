@@ -19,6 +19,7 @@ Route::prefix('/auth')->group(function () {
 Route::middleware(['auth:sanctum'])->group(function () {
 
     Route::prefix('/chat-room')->group(function () {
+        Route::get('', [ChatRoomController::class, 'index']);
         Route::get('/get-by-user', [ChatRoomController::class, 'getByUserId']);
         Route::post('/create', [ChatRoomController::class, 'store']);
     });

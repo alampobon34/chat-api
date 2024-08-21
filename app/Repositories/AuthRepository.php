@@ -3,4 +3,7 @@
 namespace App\Repositories;
 
 
-class AuthRepository {}
+class AuthRepository
+{
+    public function register(array $array) {}
+}

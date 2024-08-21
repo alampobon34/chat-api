@@ -9,7 +9,7 @@ class ChatRoomRepository
 {
     public function index()
     {
-        return ChatRoom::select(['id', 'room_name as roomName', 'user_ids as userIds', 'is_active'])->orderBy('id', 'DESC')->get();
+        return ChatRoom::with('users:id,name,email')->select(['id', 'room_name as roomName', 'user_ids as userIds', 'is_active as isActive'])->orderBy('id', 'DESC')->get();
     }
 
 

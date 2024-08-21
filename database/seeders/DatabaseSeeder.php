@@ -14,13 +14,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-        $this->call(ChatRoomSeeder::class);
-        $this->call(UserSeeder::class);
-        // User::factory()->create([
-        //     'name' => 'User',
-        //     'email' => 'user@gmail.com',
-        //     'password' => Hash::make('admin@123')
-        // ]);
+
+        $this->call([
+            ChatRoomSeeder::class,
+            UserSeeder::class,
+            ChatRoomUserSeeder::class,
+        ]);
     }
 }

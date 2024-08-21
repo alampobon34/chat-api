@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\ChatRoomRequest;
+use App\Models\User;
 use App\Services\ChatRoomService;
 use Exception;
 
@@ -15,6 +16,11 @@ class ChatRoomController extends Controller
     public function __construct(ChatRoomService $chatRoomService)
     {
         $this->chatRoomService = $chatRoomService;
+    }
+
+    public function index()
+    {
+        return $this->chatRoomService->index();
     }
 
     public function getByUserId(Request $request)

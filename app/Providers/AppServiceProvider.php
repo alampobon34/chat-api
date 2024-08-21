@@ -17,9 +17,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->bind(ChatRoomRepository::class, ChatRoomService::class);
-        $this->app->bind(ChatHistoryRepository::class, ChatHistoryService::class);
-        $this->app->bind(AuthRepository::class, AuthService::class);
+        // $this->app->bind(AuthService::class, AuthRepository::class);
+        // $this->app->bind(ChatRoomService::class, ChatRoomRepository::class);
+        // $this->app->bind(ChatHistoryService::class, ChatHistoryService::class);
     }
 
     /**
